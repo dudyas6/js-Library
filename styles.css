@@ -1,0 +1,204 @@
+/* RESET & UTILS */
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+
+:root {
+    --white: #fffbfb;
+    --grey: #f0eef1;
+    --black: #050505;
+    --red: #ff7070;
+    --light-green: #9fff9c;
+    --light-red: #ff9c9c;
+    --border-radius: 8px;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 40px;
+    --container-width: 1200px;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* PAGE CSS */
+
+body {
+    display: grid;
+    grid-template-rows: 0.5fr 6fr 0.5fr;
+    height: 100vh;
+    font-family: 'Edu SA Beginner', cursive;
+}
+
+.top-nav {
+    height: 60px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.main {
+    margin: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f5f5f5;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-top:10px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    gap: 15px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.book {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 3px 5px 6px 5px;
+}
+
+.delete {
+    align-self: center;
+    justify-self: center;
+    height: 40px;
+    width: 100px;
+    border-radius: 30px;
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.delete:hover {
+    cursor: pointer;
+    background-color: red;
+    color: black;
+}
+
+.add-book {
+    height: 35px;
+    width: 120px;
+    border-radius: 30px;
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 1.2rem; 
+    font-weight: bold
+}
+
+.add-book:hover {
+    cursor: pointer;
+    background-color: rgb(100, 100, 231, 0.4);
+    color: black;
+}
+
+.is-read-small {
+    border: solid 1px black;
+    border-radius: 30px;
+    width: 120px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px 1px;
+    cursor: pointer;
+}
+
+.is-read-small:hover {
+    background-color: rgb(75, 231, 75);
+}
+
+.book-read {
+    display: flex;
+    gap: 20px;
+}
+
+.book p, label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.add-book-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.input {
+    height: 25px;
+    padding-left: 15px;
+    border-radius: 30px;
+}
+
+.submit-button {
+    border-radius: 40px;
+    width: 50%;
+    align-self: center;
+}
+
+.submit-button:hover {
+    background-color: rgb(100, 100, 231, 0.4);
+    cursor:pointer;
+}
+
+/* MODALS */
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 350px;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    background-color: var(--grey);
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s ease-in-out;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.active {
+    display: block;
+}
+
+.error-msg {
+    display: none;
+    color: red;
+}
+
+.error-msg.active {
+    display: block;
+}

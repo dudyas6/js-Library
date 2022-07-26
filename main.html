@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Library</title>
+    <script src="script.js" async></script>
+</head>
+<body>
+    <div class="top-nav">
+        <h1>Library!</h1>
+    </div>
+    <div class="main">
+        <button class="add-book" id="addBookBtn">
+            + Add Book
+        </button>
+        <div class="books-grid">
+        </div>
+    </div>
+    <div class="footer">
+        Footer Here
+    </div>
+    <div class="modal active" id="addBookModal">
+        <form class="add-book-form" id="addBookForm">
+            <h3>Add new book</h3>
+            <input
+              class="input"
+              type="text"
+              id="title"
+              placeholder="Title"
+              required
+              maxlength="100"
+            />
+            <p class="error-msg" id="errorMsg"></p>
+            <input
+              class="input"
+              type="text"
+              id="author"
+              placeholder="Author"
+              required
+              maxlength="100"
+            />
+            <input
+              class="input"
+              type="number"
+              id="pages"
+              placeholder="Pages"
+              required
+              max="10000"
+            />
+            <div class="is-read">
+              <label for="is-read">Have you read the book? </label>
+              <input class="checkbox" type="checkbox" id="isRead" />
+            </div>
+            <button class="submit-button" type="submit">Submit</button>
+          </form>
+    </div>
+    <div class="overlay active" id="overlay"></div>
+</body>
+</html>
